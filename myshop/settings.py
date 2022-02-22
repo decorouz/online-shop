@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
+import braintree
 from pathlib import Path
 import os
 from decouple import config
@@ -44,6 +45,7 @@ INSTALLED_APPS = [
     'shop.apps.ShopConfig',
     'cart.apps.CartConfig',
     'orders.apps.OrdersConfig',
+    'payment.apps.PaymentConfig'
 ]
 
 MIDDLEWARE = [
@@ -146,3 +148,17 @@ EMAIL_PORT = 587
 EMAIL_HOST = 'smtp.mailgun.org'
 EMAIL_HOST_USER = config('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
+
+
+# Braintree settings
+BRAINTREE_MERCHANT_ID = config("BRAINTREE_MERCHANT_ID")
+BRAINTREE_PUBLIC_KEY = config("BRAINTREE_PUBLIC_KEY")
+BRAINTREE_PRIVATE_KEY = config("BRAINTREE_PRIVATE_KEY")
+
+
+BRAINTREE_CONF = braintree.Configuration(
+    braintree.Environment.Sandbox,
+    BRAINTREE_MERCHANT_ID,
+    BRAINTREE_PUBLIC_KEY,
+    BRAINTREE_PRIVATE_KEY
+)
