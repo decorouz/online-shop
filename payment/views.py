@@ -24,7 +24,6 @@ def payment_process(request):
             }
         })
         if result.is_success:
-            print("Result", result)
             # mark the order as paid
             order.paid = True
             # store the unique transaction id
