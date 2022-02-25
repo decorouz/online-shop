@@ -1,11 +1,11 @@
 # Adding asynchronous tasks to your application
-from myshop.celery import app
+from celery import shared_task
 from django.core.mail import send_mail
 from .models import Order
-from myshop import settings
+from django.conf import settings
 
 
-@app.task
+@shared_task
 def order_created(order_id):
     """Task to send an email notification when an order is successfully created
     """
