@@ -4,6 +4,7 @@ from orders.models import Order
 import braintree
 from .tasks import payment_completed
 
+
 gateway = braintree.BraintreeGateway(settings.BRAINTREE_CONF)
 
 

@@ -14,3 +14,6 @@ env.bak/
 venv.bak/
 
 zdoc/
+media/
+myshopenv/
+staticfiles/
