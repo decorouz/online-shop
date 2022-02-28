@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-28 09:08+0100\n"
+"POT-Creation-Date: 2022-02-28 09:55+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,8 +18,32 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: cart/forms.py:11
+#: cart/forms.py:11 cart/templates/cart/detail.html:19
 msgid "Quantity"
+msgstr ""
+
+#: cart/templates/cart/detail.html:6 cart/templates/cart/detail.html:13
+msgid "Your shopping cart"
+msgstr ""
+
+#: cart/templates/cart/detail.html:17
+msgid "Image"
+msgstr ""
+
+#: cart/templates/cart/detail.html:18
+msgid "Product"
+msgstr ""
+
+#: cart/templates/cart/detail.html:20
+msgid "Remove"
+msgstr ""
+
+#: cart/templates/cart/detail.html:21
+msgid "Unit Price"
+msgstr ""
+
+#: cart/templates/cart/detail.html:22
+msgid "Price"
 msgstr ""
 
 #: cart/templates/cart/detail.html:63
@@ -33,16 +57,60 @@ msgid ""
 "            "
 msgstr ""
 
+#: cart/templates/cart/detail.html:82
+msgid "Apply a coupon"
+msgstr ""
+
+#: cart/templates/cart/detail.html:89
+msgid "Continue shopping"
+msgstr ""
+
+#: cart/templates/cart/detail.html:90
+msgid "Checkout"
+msgstr ""
+
 #: coupons/forms.py:6
 msgid "Coupon"
 msgstr ""
 
-#: myshop/settings.py:122
+#: myshop/settings.py:123
 msgid "English"
 msgstr ""
 
-#: myshop/settings.py:123
+#: myshop/settings.py:124
 msgid "Spanish"
+msgstr ""
+
+#: myshop/urls.py:25
+msgid "admin/"
+msgstr ""
+
+#: myshop/urls.py:26
+msgid "cart/"
+msgstr ""
+
+#: myshop/urls.py:27
+msgid "orders/"
+msgstr ""
+
+#: myshop/urls.py:28
+msgid "payment/"
+msgstr ""
+
+#: myshop/urls.py:29
+msgid "coupons/"
+msgstr ""
+
+#: payment/urls.py:8
+msgid "process/"
+msgstr ""
+
+#: payment/urls.py:9
+msgid "done/"
+msgstr ""
+
+#: payment/urls.py:10
+msgid "canceled/"
 msgstr ""
 
 #: shop/templates/shop/base.html:10 shop/templates/shop/base.html:16
@@ -69,8 +137,8 @@ msgstr[1] ""
 msgid "Your cart is empty."
 msgstr ""
 
-#: shop/templates/shop/product/detail.html:21
-msgid " Add to cart"
+#: shop/templates/shop/product/detail.html:22
+msgid "Add to cart"
 msgstr ""
 
 #: shop/templates/shop/product/list.html:6
