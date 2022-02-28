@@ -9,18 +9,19 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-02-28 09:08+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2022-02-28 08:28+0000\n"
+"Last-Translator:   <agdev882@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Translated-Using: django-rosetta 0.9.8\n"
 
 #: cart/forms.py:11
 msgid "Quantity"
-msgstr ""
+msgstr "Candidad"
 
 #: cart/templates/cart/detail.html:63
 #, python-format
@@ -32,10 +33,15 @@ msgid ""
 "            </td>\n"
 "            "
 msgstr ""
+"\n"
+"<td>\n"
+"\"%(coupon_code)s\" cupón\n"
+"(%(discount)s%% off)\n"
+"</td>"
 
 #: coupons/forms.py:6
 msgid "Coupon"
-msgstr ""
+msgstr "Cupón"
 
 #: myshop/settings.py:122
 msgid "English"
@@ -47,11 +53,11 @@ msgstr "Español"
 
 #: shop/templates/shop/base.html:10 shop/templates/shop/base.html:16
 msgid "My Shop"
-msgstr ""
+msgstr "mi tienda"
 
 #: shop/templates/shop/base.html:22
 msgid "Your cart"
-msgstr ""
+msgstr "Tu carrito"
 
 #: shop/templates/shop/base.html:24
 #, python-format
@@ -63,20 +69,24 @@ msgid_plural ""
 "                %(items)s item, $%(total)s\n"
 "                "
 msgstr[0] ""
+"\n"
+"%(items)s producto, $%(total)s"
 msgstr[1] ""
+"\n"
+"%(items)s productos, $%(total)s"
 
 #: shop/templates/shop/base.html:30
 msgid "Your cart is empty."
-msgstr ""
+msgstr "Tu carrito esta vacío."
 
 #: shop/templates/shop/product/detail.html:21
 msgid " Add to cart"
-msgstr ""
+msgstr "Añadir a la cesta"
 
 #: shop/templates/shop/product/list.html:6
 msgid "Products"
-msgstr ""
+msgstr "Productos"
 
 #: shop/templates/shop/product/list.html:14
 msgid "All"
-msgstr ""
+msgstr "Todos"

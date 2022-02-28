@@ -9,14 +9,15 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-02-28 09:08+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2022-02-28 08:30+0000\n"
+"Last-Translator:   <agdev882@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Translated-Using: django-rosetta 0.9.8\n"
 
 #: orders/models.py:13
 #, fuzzy
@@ -51,11 +52,11 @@ msgstr "ciudad"
 #: orders/templates/orders/order/create.html:4
 #: orders/templates/orders/order/create.html:7
 msgid "Checkout"
-msgstr ""
+msgstr "Verificar"
 
 #: orders/templates/orders/order/create.html:9
 msgid "Your order"
-msgstr ""
+msgstr "Su pedido"
 
 #: orders/templates/orders/order/create.html:19
 #, python-format
@@ -71,7 +72,7 @@ msgstr "Total"
 
 #: orders/templates/orders/order/create.html:30
 msgid "Place order"
-msgstr "Realizar compra"
+msgstr "Realizar pedido"
 
 #: orders/templates/orders/order/created.html:4
 #: orders/templates/orders/order/created.html:7
@@ -82,11 +83,9 @@ msgstr "Gracias"
 #, python-format
 msgid ""
 "\n"
-"<p>Your order has been successfully completed. Your order number is <strong>"
-"%(order_id)s</strong>.</p>\n"
+"<p>Your order has been successfully completed. Your order number is <strong>%(order_id)s</strong>.</p>\n"
 "\n"
 msgstr ""
 "\n"
-"    <p>Tu pedido se ha completado correctamente. El número de tu pedido es "
-"<strong>%(order_id)s</strong>.</p>\n"
+"    <p>Tu pedido se ha completado correctamente. El número de tu pedido es <strong>%(order_id)s</strong>.</p>\n"
 "\n"
