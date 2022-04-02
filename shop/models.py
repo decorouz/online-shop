@@ -1,4 +1,3 @@
-
 from django.db import models
 from django.urls import reverse
 from parler.models import TranslatableModel, TranslatedFields
@@ -9,11 +8,11 @@ from parler.models import TranslatableModel, TranslatedFields
 class Category(TranslatableModel):
     translations = TranslatedFields(
         name=models.CharField(max_length=200, db_index=True),
-        slug=models.SlugField(max_length=200, db_index=True, unique=True)
+        slug=models.SlugField(max_length=200, db_index=True, unique=True),
     )
 
     class Meta:
-       # ordering = ("name",)
+        # ordering = ("name",)
         verbose_name = "category"
         verbose_name_plural = "categories"
 
@@ -21,20 +20,16 @@ class Category(TranslatableModel):
         return self.name
 
     def get_absolute_url(self):
-        return reverse("shop:product_list_by_category",
-                       args=[self.slug])
+        return reverse("shop:product_list_by_category", args=[self.slug])
 
 
 class Product(TranslatableModel):
     translations = TranslatedFields(
         name=models.CharField(max_length=200, db_index=True),
-        slug=models.SlugField(max_length=200,
-                              db_index=True),
-        description=models.TextField(blank=True)
+        slug=models.SlugField(max_length=200, db_index=True),
+        description=models.TextField(blank=True),
     )
-    category = models.ForeignKey(Category,
-                                 related_name="products",
-                                 on_delete=models.CASCADE)
+    category = models.ForeignKey(Category, related_name="products", on_delete=models.CASCADE)
     image = models.ImageField(upload_to="product/%Y/%m?%d", blank=True)
     price = models.DecimalField(max_digits=10, decimal_places=2)
     available = models.BooleanField(default=True)
@@ -42,14 +37,13 @@ class Product(TranslatableModel):
     updated = models.DateTimeField(auto_now_add=True)
     ratings = models.PositiveBigIntegerField(db_index=True, default=0)
 
-   # class Meta:
-    #"""Plan to query products by both id and slug fields together"""
+    # class Meta:
+    # """Plan to query products by both id and slug fields together"""
     # ordering = ("name",)
-    #index_together = (("id", "slug"))
+    # index_together = (("id", "slug"))
 
     def __str__(self):
         return self.name
 
     def get_absolute_url(self):
-        return reverse("shop:product_detail",
-                       args=[self.id, self.slug])
+        return reverse("shop:product_detail", args=[self.id, self.slug])

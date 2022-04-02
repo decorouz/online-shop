@@ -1,11 +1,12 @@
 from decimal import Decimal
+
+from coupons.models import Coupon
 from django.conf import settings
 from shop.models import Product
-from coupons.models import Coupon
 
 
 class Cart(object):
-    """ The cart that will allow you manage the shopping cart"""
+    """The cart that will allow you manage the shopping cart"""
 
     def __init__(self, request) -> None:
         """
@@ -22,12 +23,11 @@ class Cart(object):
 
     def add(self, product, quantity=1, override_quantity=False):
         """
-        Add product to the cart of update it quantity
+        Add product to the cart of update it quantityF
         """
         product_id = str(product.id)
         if product_id not in self.cart:
-            self.cart[product_id] = {"quantity": 0,
-                                     "price": str(product.price)}
+            self.cart[product_id] = {"quantity": 0, "price": str(product.price)}
         if override_quantity:
             self.cart[product_id]["quantity"] = quantity
         else:
@@ -63,8 +63,7 @@ class Cart(object):
             yield item
 
     def __len__(self):
-        """Count all the items in the cart
-        """
+        """Count all the items in the cart"""
         return sum(item["quantity"] for item in self.cart.values())
 
     def get_total_price(self):

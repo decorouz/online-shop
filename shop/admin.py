@@ -1,8 +1,9 @@
 from pickle import NONE
+
 from django.contrib import admin
 from parler.admin import TranslatableAdmin
-from .models import Category, Product
 
+from .models import Category, Product
 
 # Register your models here.
 
@@ -17,8 +18,7 @@ class CategoryAdmin(TranslatableAdmin):
 
 @admin.register(Product)
 class ProductAdmin(TranslatableAdmin):
-    list_display = ["name", "slug", "price",
-                    "available", "created", "updated", "ratings"]
+    list_display = ["name", "slug", "price", "available", "created", "updated", "ratings"]
     list_filter = ["available", "created", "updated", "ratings"]
     list_editable = ["price", "available"]
 

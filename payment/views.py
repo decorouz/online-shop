@@ -1,9 +1,9 @@
-from django.shortcuts import render, redirect, get_object_or_404
-from django.conf import settings
-from orders.models import Order
 import braintree
-from .tasks import payment_completed
+from django.conf import settings
+from django.shortcuts import get_object_or_404, redirect, render
+from orders.models import Order
 
+from .tasks import payment_completed
 
 gateway = braintree.BraintreeGateway(settings.BRAINTREE_CONF)
 
@@ -17,13 +17,9 @@ def payment_process(request):
         # retreive nonce
         nonce = request.POST.get("payment_method_nonce", None)
         # create and submit transaction
-        result = gateway.transaction.sale({
-            "amount": f"{total_cost:.2f}",
-            "payment_method_nonce": nonce,
-            "options": {
-                "submit_for_settlement": True
-            }
-        })
+        result = gateway.transaction.sale(
+            {"amount": f"{total_cost:.2f}", "payment_method_nonce": nonce, "options": {"submit_for_settlement": True}}
+        )
         if result.is_success:
             # mark the order as paid
             order.paid = True
@@ -38,10 +34,7 @@ def payment_process(request):
     else:
         # generate token
         client_token = gateway.client_token.generate()
-        return render(request,
-                      "payment/process.html",
-                      {"order": order,
-                       "client_token": client_token})
+        return render(request, "payment/process.html", {"order": order, "client_token": client_token})
 
 
 def payment_done(request):

@@ -1,24 +1,24 @@
+import csv
+import datetime
+
 from django.contrib import admin
-from .models import Order, OrderItem
 from django.http import HttpResponse
 from django.urls import reverse
 from django.utils.safestring import mark_safe
 
-import csv
-import datetime
+from .models import Order, OrderItem
 
 
 # Register your models here.
 def export_to_csv(modeladmin, request, queryset):
     """A function to download a list of orders as a CSV file"""
     opts = modeladmin.model._meta
-    content_disposition = f'filename={opts.verbose_name}.csv'
+    content_disposition = f"filename={opts.verbose_name}.csv"
     response = HttpResponse(content_type="text/csv")
     response["Content-Disposition"] = content_disposition
     writer = csv.writer(response)
 
-    fields = [field for field in opts.get_fields() if not
-              field.many_to_many and not field.one_to_many]
+    fields = [field for field in opts.get_fields() if not field.many_to_many and not field.one_to_many]
 
     # Write a first row with header information
     writer.writerow([field.verbose_name for field in fields])
@@ -53,14 +53,25 @@ def order_pdf(obj):
     return mark_safe(f'<a href="{url}" target="_blank">PDF</a>')
 
 
-order_pdf.short_description = 'Invoice'
+order_pdf.short_description = "Invoice"
 
 
 @admin.register(Order)
 class OrderAdmin(admin.ModelAdmin):
-    list_display = ["id", "first_name", "last_name", "email",
-                    "address", "postal_code", "city", "paid", "created", "updated", order_detail,
-                    order_pdf]
+    list_display = [
+        "id",
+        "first_name",
+        "last_name",
+        "email",
+        "address",
+        "postal_code",
+        "city",
+        "paid",
+        "created",
+        "updated",
+        order_detail,
+        order_pdf,
+    ]
     list_filter = ["paid", "created", "updated"]
     inlines = [OrderItemInline]
     actions = [export_to_csv]
