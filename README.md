@@ -23,7 +23,7 @@ This repository contains the complete source-code for the 7th chapter (Building 
    src/redis-server
 3. Start Django web server (Make sure the virtual environment is activated) python manage.py runserver
 
-## ToDo:
+## TODO:
 
 -   Modify the administration order detail template and the order PDF invoice to display the applied coupon in the same way you did for the cart.
 -   Rating or Review System
@@ -31,5 +31,4 @@ This repository contains the complete source-code for the 7th chapter (Building 
 -   Update the styling
 -   Implement User App
 -   pagination for list products
--   Remove coupon after from check
--   Search functionality for products.
+-   Remove coupon after checkout
